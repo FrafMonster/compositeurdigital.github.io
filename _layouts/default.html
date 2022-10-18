@@ -15,12 +15,17 @@
     </section>
 
     <section class="main-content">
-      <div class="improve right hide-on-mobiles">
-            <a href="https://github.com/compositeurdigital/compositeurdigital.github.io/edit/master/{{ page.path }}"><i class="fa fa-pencil"></i>Improve this page</a>
-          </div>
+      <div>
+        <div class="improve right hide-on-mobiles">
+          <a href="https://github.com/compositeurdigital/compositeurdigital.github.io/edit/master/{{ page.path }}"><i class="fa fa-pencil"></i>Improve this page</a>
+        </div>
+
+        <input type="text" id="search-input" placeholder="Search blog posts..">
+        <ul id="results-container"></ul>
+      </div>
+
       {{ content }}
 
-     
     </section>
     
      <footer class="site-footer">
@@ -41,5 +46,17 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+
+    <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+
+    <script type="text/javascript">
+      let sjs = SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search.json',
+      });
+
+      sjs.search("wow");
+    </script>
   </body>
 </html>
