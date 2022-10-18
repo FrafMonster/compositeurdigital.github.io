@@ -55,13 +55,15 @@
       let sjs = SimpleJekyllSearch({
         searchInput: searchInput,
         resultsContainer: document.getElementById('results-container'),
-        json: '/search.json',
+        json: '../search.json',
       });
 
       searchInput.addEventListener("input", (event) => {
+        console.log("Searching...");
+
         sjs.search(event.target.value);
       });
-      
+
     </script>
   </body>
 </html>
