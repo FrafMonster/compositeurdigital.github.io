@@ -52,6 +52,18 @@ Vous pouvez créer un Hot spot sur un document pour ouvrir un autre document lor
 	
 4. Enregistrez votre présentation Powerpoint à l'endroit souhaité dans votre dossier univers.
 
+## Métadonnées disponibles
+
+| Paramètre                         | Type      | Default | Description |
+|:--------------------------------- |:----------|:--------|:-|
+| `video.controls.position`         | `auto|bottom|left|right|leftandright` | auto   | définit la position ou s'affichent les boutons page suivante/précédente |
+| `video.controls.hide`             | `boolean` | false   | cache les boutons page suivante/précédente |
+
+Lorsque la position est paramétré `auto`, la position sera `leftandright` si la rotation des documents est activée, sinon `bottom`.
+![Slideshow controls position](../../../en/img/slideshow_controls.jpg)
+
+[Accéder aux métadonnées communes](../advanced_setting.md#résumé)
+
 ## Diaporama
 
 Par défaut, les fichiers Powerpoint sont gérés par Compositeur Digital UX comme l'extension `.slideshow` ([voir la section Diaporama](slideshows.md)).

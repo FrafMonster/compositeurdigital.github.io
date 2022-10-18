@@ -55,6 +55,8 @@ Pour utiliser un simulateur d'épargne, ajoutez l'extension `.simuinvest` à la 
 | `simulator.startingDepositMaxValue`     | `nombre` | 800000     | fixe la valeur maximale du montant du dépôt de départ |
 | `simulator.startingDepositTickFrequency`| `nombre` | 5000       | fixe l'intervalle entre deux valeurs pour un montant de dépôt de départ |
 
+[Accéder aux métadonnées communes](../advanced_setting.md#résumé)
+
 ## Télécharger un exemple
 
 Un univers de démonstration contenant des exemples de simulateur d'épargne est disponible, [essayez-le !](../../../en/organise_content/Demo-Universe.zip) &#x1f604;
