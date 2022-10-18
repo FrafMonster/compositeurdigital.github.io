@@ -50,13 +50,18 @@
     <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
 
     <script type="text/javascript">
+      let searchInput = document.getElementById('search-input');
+      
       let sjs = SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
+        searchInput: searchInput,
         resultsContainer: document.getElementById('results-container'),
         json: '/search.json',
       });
 
-      sjs.search("wow");
+      searchInput.addEventListener("input", (event) => {
+        sjs.search(event.target.value);
+      });
+      
     </script>
   </body>
 </html>
