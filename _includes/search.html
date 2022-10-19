@@ -7,15 +7,18 @@
         padding: 16px;
         padding-left: 32px;
 
+        opacity: 1;
         background-color: #DDDDDD;
 
         border-radius: 0 10px 10px 10px;
 
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+
+        transition: 0.2s;
     }
 
     #search-input:not(:focus) ~ #results-container {
-        display: none;
+        opacity: 0;
     }
 </style>
 
