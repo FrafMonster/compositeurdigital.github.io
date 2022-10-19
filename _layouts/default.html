@@ -21,7 +21,7 @@
           <a href="https://github.com/compositeurdigital/compositeurdigital.github.io/edit/master/{{ page.path }}"><i class="fa fa-pencil"></i>Improve this page</a>
         </div>
 
-        {% include search.html %}
+        <!-- include search.html -->
       </div>
 
       {{ content }}
@@ -46,6 +46,18 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+
+    <script type="text/javascript">
+      $(document).ready(() => {
+        let language = navigator.language || navigator.userLanguage;
+
+        if (language === 'fr' || language === 'fr-FR') {
+          window.location.href = '{{ site.url }}/fr/';
+        } else {
+          window.location.href = '{{ site.url }}/en/';
+        }
+      });
+    </script>
 
   </body>
 </html>
