@@ -48,7 +48,7 @@
     {% endif %}
 
     <script type="text/javascript">
-      $(document).ready(() => {
+      window.addEventListener('load', () => {
         let language = navigator.language || navigator.userLanguage;
 
         if (language === 'fr' || language === 'fr-FR') {
