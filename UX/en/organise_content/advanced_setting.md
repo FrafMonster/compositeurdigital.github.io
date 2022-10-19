@@ -19,13 +19,9 @@ To apply a specific behavior to a set of documents, use the `*.` prefix on the p
 ## Summary 
 * [Value types](#value-types)
 * [Metadata supported](#metadata-supported)
-* [Content specific metadata](#content-specific-metadata)
-  * [Video and audio](#video-and-audio)
-  * [Web](#web)
-  * [Mortgage simulator](#mortgage-simulator)
-  * [Savings simulator](#savings-simulator)
-  * [3D objects](#3d-objects)
-  * [Search interface](#search-interfaces)
+  * [Inking](#inking)
+  * [Menu actions](#menu-actions)
+  * [Configurable actions](#configurable-actions)
 * [Shared values](#shared-values)
 
 ## Value types

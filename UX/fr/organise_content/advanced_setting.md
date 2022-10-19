@@ -19,6 +19,9 @@ Pour appliquer un comportement spécifique à un ensemble de documents, utilisez
 ## Résumé 
 * [Types de valeurs](#types-de-valeurs)
 * [Métadonnées prises en charge](#métadonnées-prises-en-charge)
+    * [Annotations](#annotations)
+    * [Actions du menu](#actions-du-menu)
+    * [Actions configurables](#actions-configurables)
 * [Valeurs partagées](#valeurs-partagées)
 
 ## Types de valeurs
