@@ -1,4 +1,24 @@
 <!-- HTML search field -->
+
+<style>
+    #results-container {
+        position: absolute;
+
+        padding: 16px;
+        padding-left: 32px;
+
+        background-color: #DDDDDD;
+
+        border-radius: 0 10px 10px 10px;
+
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #search-input:not(:focus) ~ #results-container {
+        display: none;
+    }
+</style>
+
 <div id="search-container">
     <input type="text" id="search-input" placeholder="Type your search here..." autofocus>
     <ul id="results-container"></ul>
