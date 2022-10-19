@@ -12,7 +12,7 @@
     let sjs = SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
-        json: '/compositeurdigital.github.io/search.json'
+        json: '{{ site.url }}/search.json'
     });
 
     let input = document.getElementById("search-input");
