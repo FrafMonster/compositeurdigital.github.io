@@ -7,6 +7,7 @@
 * [Créer un simulateur d'épargne](#créer-un-simulateur-d'épargne)
 * [Métadonnées disponibles](#métadonnées-disponibles)
 * [Téléchargez un exemple](#télécharger-un-exemple)
+* [Métadonnées disponibles](#métadonnées-disponibles)
 
 ## Description
 

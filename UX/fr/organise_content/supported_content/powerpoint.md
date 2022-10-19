@@ -6,6 +6,7 @@
 * [Actions dans Compositeur Digital UX](#actions-dans-compositeur-digital-ux)
 * [Hot Spots](#hot-spots)
 * [Diaporama](#diaporama)
+* [Métadonnées disponibles](#métadonnées-disponibles)
 
 ## Description
 
@@ -59,10 +60,10 @@ Vous pouvez créer un Hot spot sur un document pour ouvrir un autre document lor
 | `video.controls.position`         | `auto|bottom|left|right|leftandright` | auto   | définit la position ou s'affichent les boutons page suivante/précédente |
 | `video.controls.hide`             | `boolean` | false   | cache les boutons page suivante/précédente |
 
+[Accéder aux métadonnées communes](../advanced_setting.md#résumé)
+
 Lorsque la position est paramétré `auto`, la position sera `leftandright` si la rotation des documents est activée, sinon `bottom`.
 ![Slideshow controls position](../../../en/img/slideshow_controls.jpg)
-
-[Accéder aux métadonnées communes](../advanced_setting.md#résumé)
 
 ## Diaporama
 
