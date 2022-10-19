@@ -20,7 +20,7 @@
 </style>
 
 <div id="search-container">
-    <input type="text" id="search-input" placeholder="Type your search here..." autofocus>
+    <input type="text" id="search-input" placeholder="Type your search here...">
     <ul id="results-container"></ul>
 </div>
 
@@ -32,6 +32,6 @@
     let sjs = SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
-        json: '/search.json'
+        json: 'https://frafmonster.github.io/compositeurdigital.github.io/search.json'
     });
 </script>
