@@ -52,9 +52,11 @@
         let language = navigator.language || navigator.userLanguage;
 
         if (language === 'fr' || language === 'fr-FR') {
-          window.location.href = '{{ site.url }}/fr/';
+          // Replace the path by site.url/fr
+          window.location.href = 'https://frafmonster.github.io/compositeurdigital.github.io//fr/';
         } else {
-          window.location.href = '{{ site.url }}/en/';
+          // Replace the path by site.url/en
+          window.location.href = 'https://frafmonster.github.io/compositeurdigital.github.io//en/';
         }
       });
     </script>
