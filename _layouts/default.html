@@ -52,10 +52,12 @@
     <script type="text/javascript">
       let searchInput = document.getElementById('search-input');
       
+      console.log('Base url:{{ site.baseurl }}[end]');
+
       let sjs = SimpleJekyllSearch({
         searchInput: searchInput,
         resultsContainer: document.getElementById('results-container'),
-        json: '/search.json',
+        json: '{{ site.baseurl }}/search.json',
       });
 
       searchInput.addEventListener("input", (event) => {
