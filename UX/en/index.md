@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: search_layout
 ---
 
 # Compositeur Digital UX Documentation
