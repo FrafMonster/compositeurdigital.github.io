@@ -1,35 +1,25 @@
-# Compositeur Digital UX
+# Documentation
 
-### [Pour commencer](gettingstarted/index.md)
-Installer et lancer *Compositeur Digital UX*.
+Quelle version du Compositeur Digital utilisez-vous?
 
-### [Découvrir](user_guide/index.md)
-Découvrez comment interagir avec *Compositeur Digital UX*.  
+<br>
 
-### [Vos contenus](organise_content/index.md)
-Apprenez comment construire votre propre univers et quel type de contenu vous pouvez utiliser.
-
-* [**Contenu pris en charge**](organise_content/supported_content/index.md) : vérifiez tous les contenus disponibles.
-* [**Paramètres avancés**](organise_content/advanced_setting.md) : apprenez à tirer parti des *métadonnées*.
-* [**Fournisseurs de contenus**](organise_content/supported_providers.md) : une maquette à intégrer? Vérifiez si votre contenu est supporté.
-
-### [Guide administratif](administrative_guide/index.md)
-Gérez votre *Compositeur Digital UX*
-
-* [**Licence**](administrative_guide/index.md#licence-compositeur-digital-ux) : activez votre licence Compositeur Digital UX.
-* [**Office365**](administrative_guide/index.md#compte-office365) : connectez Compositeur Digital UX à votre compte Office365.
-* [**Mode kiosque**](administrative_guide/index.md#mode-kiosque) : configurez votre application pour qu'elle soit utilisée dans la configuration du kiosque.
-
-### Tutos 
-* [**Créer un univers**](tutorials/createuniverse/index.md)
-* [**Utiliser le Compositeur Digital UX dans une réunion Teams**](tutorials/remotemeeting/index.md)
-* [**Tester un contenu en ligne**](tutorials/checkcdurl/index.md)
+[<img width="260" src="../en/img/main_doc_ux-v3.jpg"/>](index.md) [<img width="260" src="../en/img/main_doc_v4-v3.jpg"/>](http://doc.compositeurdigital.com/fr/)
 
 
-### [FAQ](FAQ/index.md)
-Contient des questions fréquemment posées sur l'installation et l'utilisation de *Compositeur Digital UX* et fournit des solutions aux problèmes courants.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-### [Notes de version](../en/release_notes/index.md)
-Description des nouvelles fonctionnalités et des corrections de bogues dans les versions de *Compositeur Digital UX*.  
-
-[Retour au Choix de documentation](selector.md)
+<br>
+<br>
+<br>
+<br>
+<br>

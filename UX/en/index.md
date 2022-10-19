@@ -1,29 +1,25 @@
-# Compositeur Digital UX Documentation
+# Documentation Selection
 
-### [Getting started](gettingstarted/index.md)
-Install and launch *Compositeur Digital UX*.
+Which Compositeur Digital are you using?
 
-### [User guide](user_guide/index.md)
-Discover how to interact with *Compositeur Digital UX*.  
+<br>
 
-### [Organise content](organise_content/index.md)
-Learn how to build your own universe and what type of content you can use.
+[<img width="260" src="en/img/main_doc_ux-v3.jpg"/>](index.md) [<img width="260" src="en/img/main_doc_v4-v3.jpg"/>](http://doc.compositeurdigital.com/en/)
 
-* [**Supported content**](organise_content/supported_content/index.md) : check all the content available.
-* [**Advanced settings**](organise_content/advanced_setting.md) : learn how to take advantage of *meta data*.
-* [**Content provider**](organise_content/supported_providers.md) : verify if your content provider is supported.
 
-### [Administrative guide](administrative_guide/index.md)
-Manage your *Compositeur Digital UX*
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-* [**License**](administrative_guide/index.md#compositeur-digital-ux-license) : activate your Compositeur Digital UX license.
-* [**Office365**](administrative_guide/index.md#office365-account) : connect Compositeur Digital UX to your Office365 tenant.
-* [**Kiosk mode**](administrative_guide/index.md#kiosk-mode) : configure your app to be used in kiosk configuration.
-
-### [FAQ](FAQ/index.md)
-Contains frequently asked questions about installing and using *Compositeur Digital UX* and provides solutions to common problems.
-
-### [Release notes](release_notes/index.md)
-Description of new features and bug fixes in releases of the *Compositeur Digital UX*  
-
-[Back to Documentation choice](selector.md)
+<br>
+<br>
+<br>
+<br>
+<br>
