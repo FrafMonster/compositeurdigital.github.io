@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#646f93">
     <link href='https://fonts.googleapis.com/css?family=Nunito+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
   </head>
   <body>
     <section class="page-header">
@@ -20,8 +21,7 @@
           <a href="https://github.com/compositeurdigital/compositeurdigital.github.io/edit/master/{{ page.path }}"><i class="fa fa-pencil"></i>Improve this page</a>
         </div>
 
-        <input type="text" id="search-input" placeholder="Search blog posts..">
-        <ul id="results-container"></ul>
+        {% include search.html %}
       </div>
 
       {{ content }}
@@ -47,25 +47,5 @@
       </script>
     {% endif %}
 
-    <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
-
-    <script type="text/javascript">
-      let searchInput = document.getElementById('search-input');
-      
-      console.log('Base url:{{ site.baseurl }}[end]');
-
-      let sjs = SimpleJekyllSearch({
-        searchInput: searchInput,
-        resultsContainer: document.getElementById('results-container'),
-        json: 'https://frafmonster.github.io/compositeurdigital.github.io/search.json',
-      });
-
-      searchInput.addEventListener("input", (event) => {
-        console.log("Searching...");
-
-        sjs.search(event.target.value);
-      });
-
-    </script>
   </body>
 </html>
