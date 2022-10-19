@@ -1,7 +1,3 @@
----
-layout: search_layout
----
-
 # Compositeur Digital UX Documentation
 
 ### [Getting started](gettingstarted/index.md)
