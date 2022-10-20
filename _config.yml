@@ -1,2 +1,16 @@
 theme: jekyll-theme-cayman
 title: Compositeur Digital Documentation
+
+defaults:
+  -
+    scope:
+      path: "UX"
+      type: "pages"
+    values:
+      layout: search
+  -
+    scope:
+      path: "V4"
+      type: "pages"
+    values:
+      layout: search
