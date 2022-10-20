@@ -23,7 +23,7 @@
 
   </head>
   <body>
-    <section class="page-header">
+    <section id="page-header-area" class="page-header">
       <img src="/assets/img/CD-titre-header.png" width=500 />
       <h1 class="project-name">Documentation</h1>
     </section>
@@ -60,7 +60,7 @@
 
     <script type="text/javascript">
       function updateHeader() {
-        let header = document.getElementById("page-header");
+        let header = document.getElementById("page-header-area");
         
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
           header.style.padding = '1rem';
