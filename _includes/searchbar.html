@@ -48,7 +48,7 @@
 </style>
 
 <div id="search-container">
-    <input type="text" id="search-input" placeholder="Type your search here...">
+    <input type="text" id="search-input" placeholder="...">
     <ul id="results-container"></ul>
 </div>
 
@@ -62,11 +62,19 @@
             ['fr', 'https://frafmonster.github.io/compositeurdigital.github.io/data/search_fr.json'],
             ['en', 'https://frafmonster.github.io/compositeurdigital.github.io/data/search_en.json']
         ]);
+
+        let placeholders = new Map([
+            ['fr', "Rechercher..."],
+            ['en', "Search..."]
+        ]);
         
         let language = navigator.language;
 
         if (language !== undefined) {
+            let searchInput = document.getElementById("search-input");            
             let json = jsonIndexFiles.get(language);
+
+            searchInput.placeholder = placeholders.get(language);
             
             SimpleJekyllSearch({
                 searchInput: document.getElementById('search-input'),
