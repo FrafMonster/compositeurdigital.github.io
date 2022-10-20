@@ -1,22 +1,2 @@
 theme: jekyll-theme-cayman
 title: Compositeur Digital Documentation
-
-defaults:
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-  -
-    scope:
-      path: "UX/en"
-      type: "pages"
-    values:
-      layout: "en"
-  -
-    scope:
-      path: "UX/fr"
-      type: "pages"
-    values:
-      layout: "fr"
