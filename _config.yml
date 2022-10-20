@@ -14,7 +14,7 @@ defaults:
       type: "pages"
     values:
       language: "fr"
-    -
+  -
     scope:
       path: "UX/en"
       type: "pages"
