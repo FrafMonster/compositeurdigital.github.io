@@ -1,3 +1,7 @@
+---
+layout: search
+---
+
 # Compositeur Digital 4 Documentation
 
 ### [Getting started](gettingstarted.md)

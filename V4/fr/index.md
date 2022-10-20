@@ -1,3 +1,7 @@
+---
+layout: search
+---
+
 # Documentation
 
 ### [Guide de démarrage](gettingstarted.md)
