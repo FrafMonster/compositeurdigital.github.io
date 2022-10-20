@@ -10,7 +10,32 @@ defaults:
       layout: search
   -
     scope:
+      path: "UX/fr"
+      type: "pages"
+    values:
+      language: "fr"
+    -
+    scope:
+      path: "UX/en"
+      type: "pages"
+    values:
+      language: "en"
+  -
+    scope:
       path: "V4"
       type: "pages"
     values:
       layout: search
+  -
+    scope:
+      path: "V4/fr"
+      type: "pages"
+    values:
+      language: "fr"
+  -
+    scope:
+      path: "V4/en"
+      type: "pages"
+    values:
+      language: "en"
+      
