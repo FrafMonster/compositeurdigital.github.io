@@ -1,3 +1,7 @@
+---
+layout: search
+---
+
 # Documentation
 
 Quelle version du Compositeur Digital utilisez-vous?

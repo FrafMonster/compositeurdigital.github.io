@@ -1,3 +1,7 @@
+---
+layout: search
+---
+
 # Documentation Selection
 
 Which Compositeur Digital are you using?
