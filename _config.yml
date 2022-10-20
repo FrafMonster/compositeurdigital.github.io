@@ -7,7 +7,7 @@ defaults:
       path: "UX"
       type: "pages"
     values:
-      layout: search
+      layout: search_layout
   -
     scope:
       path: "UX/fr"
@@ -25,7 +25,7 @@ defaults:
       path: "V4"
       type: "pages"
     values:
-      layout: search
+      layout: search_layout
   -
     scope:
       path: "V4/fr"
