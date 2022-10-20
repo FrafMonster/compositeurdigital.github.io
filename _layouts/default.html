@@ -8,6 +8,17 @@
     <link href='https://fonts.googleapis.com/css?family=Nunito+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
+    <style>
+      .page-header {
+        position: fixed;
+        width: 100%;
+      }
+
+      .main-content {
+        padding-top: 14rem;
+      }
+    </style>
+
   </head>
   <body>
     <section class="page-header">
@@ -20,8 +31,6 @@
         <div class="improve right hide-on-mobiles">
           <a href="https://github.com/compositeurdigital/compositeurdigital.github.io/edit/master/{{ page.path }}"><i class="fa fa-pencil"></i>Improve this page</a>
         </div>
-
-        <!-- include search.html -->
       </div>
 
       {{ content }}
