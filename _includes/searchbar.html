@@ -34,12 +34,15 @@
 <!-- Configuration -->
 <script type="text/javascript">
     window.addEventListener("load", () => {
-        // let language = navigator.language || navigator.userLanguage;
+        let language = navigator.language || navigator.userLanguage;
 
+        let unwantedDocs = language.split('-');
+        
         let sjs = SimpleJekyllSearch({
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             json: 'https://frafmonster.github.io/compositeurdigital.github.io/search.json',
+            exclude: ['https://frafmonster.github.io/compositeurdigital.github.io/UX/fr/*']
         });
     });
 </script>
