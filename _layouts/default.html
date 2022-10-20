@@ -61,13 +61,22 @@
     <script type="text/javascript">
       function updateHeader() {
         let header = document.getElementById("page-header-area");
+        let searchContainer = document.getElementById("search-container");
         
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
           header.style.padding = '1rem';
           header.style.boxShadow = '0 0 30px rgba(0 0 0 / 50%)';
+
+          if (searchContainer != null || searchContainer != undefined) {
+            searchContainer.style.top = '32px';
+          }
         } else {
           header.style.padding = '3rem';
           header.style.boxShadow = 'none';
+
+          if (searchContainer != null || searchContainer != undefined) {
+            searchContainer.style.top = '32px';
+          }
         }
       }
       
