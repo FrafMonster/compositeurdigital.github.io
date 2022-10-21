@@ -11,7 +11,7 @@
   </head>
   <body>
     <section id="page-header-area" class="page-header">
-      <img src="/assets/img/CD-titre-header.png" width=500 />
+      <img id="header-image" src="/assets/img/CD-titre-header.png" width=500 />
       <h1 class="project-name">Documentation</h1>
     </section>
 
@@ -48,18 +48,25 @@
     <script type="text/javascript">
       function updateHeader() {
         let header = document.getElementById("page-header-area");
+        let headerImage = document.getElementById("header-image");
         let searchContainer = document.getElementById("search-container");
         
         if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+          header.style.textAlign = 'left';
           header.style.padding = '1rem';
           header.style.boxShadow = '0 0 30px rgba(0 0 0 / 50%)';
 
+          headerImage.style.display = 'none';
+
           if (searchContainer != null && searchContainer != undefined) {
-            searchContainer.style.top = '32px';
+            searchContainer.style.top = '16px';
           }
         } else {
+          header.style.textAlign = 'center';
           header.style.padding = '3rem';
           header.style.boxShadow = 'none';
+
+          headerImage.style.display = 'block';
 
           if (searchContainer != null && searchContainer != undefined) {
             searchContainer.style.top = '64px';
