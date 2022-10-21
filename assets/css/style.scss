@@ -8,11 +8,20 @@ html, body {
     color:#646f93;
 }
 
-.page-header { background-image:url(../img/background-geo-rose.jpg); padding:3rem; }
+.page-header {
+    position: fixed;
+    width: 100%;
+
+    background-image: url(../img/background-geo-rose.jpg);
+    padding: 3rem;
+
+    transition: 0.2s;
+}
 
 .main-content{
-    font-size:90%;
-    padding-bottom: 250px;
+    font-size: 90%;
+
+    padding-top: 12rem;
 }
 
 .main-content img{
@@ -20,9 +29,9 @@ html, body {
 }
 
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
-    color:#646f93;
-    margin-bottom:0.5rem;
-    font-weight:700;
+    color: #646f93;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
 
@@ -47,13 +56,12 @@ p .resizeAndCenter {
 .right { float:right; }
 
 .site-footer{
-    padding:50px;
-    color:#FFFFFF;
-    background-color:#f03b5e!important;
-    background-image:linear-gradient(243deg,#f03b5e 0%,#ef6480 100%)!important;
-    margin-top: -150px;
+    padding: 50px;
+    color: #FFFFFF;
+    background-color: #f03b5e!important;
+    background-image: linear-gradient(243deg,#f03b5e 0%,#ef6480 100%)!important;
 }
 
 footer a{
-     color:#FFFFFF;
+     color: #FFFFFF;
 }
