@@ -12,7 +12,7 @@
   <body>
     <section id="page-header-area" class="page-header">
       <img id="header-image" src="https://frafmonster.github.io/compositeurdigital.github.io/assets/img/CD-titre-header.png" width=500 />
-      <h1 class="project-name">Documentation</h1>
+      <h1 id="header-text" class="project-name">Documentation</h1>
     </section>
 
     <section class="main-content">
@@ -48,22 +48,27 @@
     <script type="text/javascript">
       function updateHeader() {
         let header = document.getElementById("page-header-area");
+        
+        let headerText = document.getElementById("header-text");
         let headerImage = document.getElementById("header-image");
+        
         let searchContainer = document.getElementById("search-container");
         
         if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
           header.style.padding = '1rem';
           header.style.boxShadow = '0 0 30px rgba(0 0 0 / 50%)';
 
+          headerText.style.transform = 'scale(0.35)';
           headerImage.style.transform = 'scale(0.35)';
 
           if (searchContainer != null && searchContainer != undefined) {
-            searchContainer.style.top = '16px';
+            searchContainer.style.top = '24px';
           }
         } else {
           header.style.padding = '3rem';
           header.style.boxShadow = 'none';
 
+          headerText.style.transform = 'scale(1)';
           headerImage.style.transform = 'scale(1)';
 
           if (searchContainer != null && searchContainer != undefined) {
