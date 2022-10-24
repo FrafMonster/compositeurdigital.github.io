@@ -43,12 +43,31 @@
         transition: 0.5s;
     }
 
+    #results-container:first-child {
+        border-radius: 10px 10px 0 0;
+    }
+
+    #results-container:last-child {
+        border-radius: 0 0 10px 10px;
+    }
+
     #search-input:placeholder-shown ~ #results-container,
     #search-input:not(:focus) ~ #results-container {
         opacity: 0;
     }
 
     .page-link {
+        display: block;
+
+        width: 100%;
+
+        padding: 4px;
+
+        border-style: solid;
+        border-width: 0.5px;
+        
+        outline-style: solid;
+        outline-width: 0.5px;
     }
 </style>
 
