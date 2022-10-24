@@ -27,11 +27,11 @@
 
     #results-container {
         position: absolute;
+        list-style: none;
 
         width: 380px;
 
         padding: 16px;
-        padding-left: 32px;
 
         opacity: 1;
         background-color: #DDDDDD;
@@ -46,6 +46,9 @@
     #search-input:placeholder-shown ~ #results-container,
     #search-input:not(:focus) ~ #results-container {
         opacity: 0;
+    }
+
+    .page-link {
     }
 </style>
 
@@ -82,7 +85,7 @@
                 searchInput: document.getElementById('search-input'),
                 resultsContainer: document.getElementById('results-container'),
                 json: json,
-                searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a></li>',
+                searchResultTemplate: '<li><a class="page-link" href="{{ site.url }}{url}">{title}</a></li>',
                 // exclude: ['https://frafmonster.github.io/compositeurdigital.github.io/UX/fr/*']
             });
         }
