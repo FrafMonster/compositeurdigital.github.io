@@ -68,7 +68,12 @@ p .resizeAndCenter {
     font-weight: normal;
 }
 
-.right { float:right; }
+.right {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+}
 
 .site-footer{
     padding: 50px;
