@@ -31,14 +31,14 @@
 
         width: 380px;
 
-        padding: 16px;
+        padding: 0px;
 
         opacity: 1;
         background-color: #DDDDDD;
 
         border-radius: 10px;
 
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
 
         transition: 0.5s;
     }
@@ -61,22 +61,21 @@
 
         width: 100%;
 
-        padding: 4px;
+        padding: 8px;
 
-        border-style: solid;
-        border-width: 0.5px;
-        
-        outline-style: solid;
-        outline-width: 0.5px;
+        color: white;
+        background-color: #F03B5E;
     }
 
     .page-link:hover {
         text-decoration: none;
-        
-        outline-style: solid;
-        outline-width: 0.5px;
 
-        background-color: #CCCCCC;
+        font-weight: bold;
+
+        padding-left: 16px;
+        
+        color: #F03B5E;
+        background-color: #FCEEEF;
     }
 </style>
 
@@ -114,7 +113,7 @@
                 resultsContainer: document.getElementById('results-container'),
                 json: json,
                 searchResultTemplate: '<li class="page-item"><a class="page-link" href="{{ site.url }}{url}">{title}</a></li>',
-                // exclude: ['https://frafmonster.github.io/compositeurdigital.github.io/UX/fr/*']
+                limit: 20,
             });
         }
     });
