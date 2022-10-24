@@ -35,10 +35,6 @@
         outline: none;
     }
 
-    #search-container[isSearching="true"] .input-container #searchInput {
-        width: 192px;
-    }
-
     #search-icon {
         font-size: 1.15rem;
 
@@ -69,7 +65,15 @@
         transition: 0.5s;
     }
 
-    #search-container[isSearching="true"] #results-container {
+    #search-container[isSearching] .input-container #search-input {
+        width: 192px;
+    }
+
+    #search-container:not([isSearching]) .input-container #search-icon {
+        border-left: solid;
+    }
+
+    #search-container[isSearching] #results-container {
         opacity: 1;
     }
 
