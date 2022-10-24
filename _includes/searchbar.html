@@ -10,18 +10,30 @@
     .input-container {
         display: flex;
 
+        align-items: center;
+        justify-content: flex-start;
+
+        height: 42px;
+
         border-style: solid;
         border-radius: 500px;
 
         padding: 6px;
+
+        transition: 0.2s;
     }
 
     #search-input {
-        width: 100%;
+        width: 0px;
 
         border-style: none;
 
         transition: 0.3s ease-in-out;
+    }
+    
+    #search-input:focus {
+        width: 192px;
+
     }
 
     #search-input:focus-visible {
@@ -29,13 +41,15 @@
     }
 
     #search-icon {
+        font-size: 1.15rem;
+
         background-color: transparent;
 
         border-style: none;
-        border-left: solid;
+        /* border-left: solid; */
 
-        padding-left: 4px;
-        padding-right: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     #results-container {
