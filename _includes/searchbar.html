@@ -82,7 +82,7 @@
                 searchInput: document.getElementById('search-input'),
                 resultsContainer: document.getElementById('results-container'),
                 json: json,
-                searchResultTemplate: '<li href="{{ site.url }}{url}">{title}</li>',
+                searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a></li>',
                 // exclude: ['https://frafmonster.github.io/compositeurdigital.github.io/UX/fr/*']
             });
         }
