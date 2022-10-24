@@ -112,8 +112,10 @@
     }
 
     #search-container:not([isSearching]) #results-container,
-    #search-input:placeholder-shown ~ #results-container,
-    #search-input:not(:focus) ~ #results-container {
+    #search-container:has(#search-input:placeholder-shown) #results-container,
+    #search-container:has(#search-input:not(:focus)) #results-container
+    /* #search-input:placeholder-shown ~ #results-container, */
+    /* #search-input:not(:focus) ~ #results-container */ {
         opacity: 0;
     }
 
