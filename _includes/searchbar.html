@@ -43,11 +43,11 @@
         transition: 0.5s;
     }
 
-    #results-container:first-child a {
+    .page-item:first-child a {
         border-radius: 10px 10px 0 0;
     }
 
-    #results-container:last-child a {
+    .page-item:last-child a {
         border-radius: 0 0 10px 10px;
     }
 
@@ -113,7 +113,7 @@
                 searchInput: document.getElementById('search-input'),
                 resultsContainer: document.getElementById('results-container'),
                 json: json,
-                searchResultTemplate: '<li><a class="page-link" href="{{ site.url }}{url}">{title}</a></li>',
+                searchResultTemplate: '<li class="page-item"><a class="page-link" href="{{ site.url }}{url}">{title}</a></li>',
                 // exclude: ['https://frafmonster.github.io/compositeurdigital.github.io/UX/fr/*']
             });
         }
