@@ -26,6 +26,10 @@
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.65);
     }
 
+    #search-container[isSearching] .input-container {
+        background-color: #F03B5E;
+    }
+
     #search-input {
         width: 192px;
 
@@ -47,7 +51,6 @@
         background-color: transparent;
 
         border-style: none;
-        border-color: #F03B5E;
 
         padding-left: 1px;
         padding-right: 1px;
@@ -111,6 +114,8 @@
 
     #search-container[isSearching] .input-container #search-icon {
         border-left: solid;
+        border-width: 1px;
+        border-color: #F03B5E;
     }
 
     #search-container:not([isSearching]) #results-container,
