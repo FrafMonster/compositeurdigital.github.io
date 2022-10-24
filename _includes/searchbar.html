@@ -53,6 +53,7 @@
 
         width: 380px;
 
+        margin: 0px;
         padding: 0px;
 
         opacity: 0;
@@ -65,16 +66,27 @@
         transition: 0.5s;
     }
 
-    #search-container[isSearching] .input-container #search-input {
-        width: 192px;
+    .page-item {
+        padding: 8px;
+
+        color: #F03B5E;
     }
 
-    #search-container:not([isSearching]) .input-container #search-icon {
-        border-left: solid;
+    .page-item a {
+        display: block;
+
+        width: 100%;
     }
 
-    #search-container[isSearching] #results-container {
-        opacity: 1;
+    .page-item:hover a {
+        font-weight: bold;
+
+        text-decoration: none;
+
+        padding-left: 24px;
+
+        color: white;
+        background-color: #F03B5E;
     }
 
     .page-item:first-child a {
@@ -85,34 +97,24 @@
         border-radius: 0 0 10px 10px;
     }
 
+    #search-container[isSearching] .input-container #search-input {
+        width: 192px;
+    }
+
+    #search-container[isSearching] .input-container #search-icon {
+        border-left: solid;
+    }
+
+    #search-container[isSearching] #results-container {
+        opacity: 1;
+    }
+
     /*
     #search-input:placeholder-shown ~ #results-container,
     #search-input:not(:focus) ~ #results-container {
         opacity: 0;
     }
     */
-
-    .page-link {
-        display: block;
-
-        width: 100%;
-
-        padding: 8px;
-
-        color: white;
-        background-color: #F03B5E;
-    }
-
-    .page-link:hover {
-        text-decoration: none;
-
-        font-weight: bold;
-
-        padding-left: 16px;
-        
-        color: #F03B5E;
-        background-color: #FCEEEF;
-    }
 </style>
 
 <div id="search-container">
