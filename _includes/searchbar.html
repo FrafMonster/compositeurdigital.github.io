@@ -3,19 +3,27 @@
 <style>
     #search-container {
         margin-right: 16px;
-        
+
         transition: 0.5s;
     }
 
     #search-input {
+        width: 40px;
+        height: 40px;
+
         padding: 8px;
 
         border-style: solid;
-        border-radius: 50px;
+        border-radius: 500px;
+
+        transition: 0.6s ease-in-out;
     }
 
     #search-input:focus {
+        width: 256px;
+
         border-color: black;
+        border-radius: 10px;
     }
 
     #search-input:focus-visible {
@@ -50,7 +58,7 @@
 
     #search-input:placeholder-shown ~ #results-container,
     #search-input:not(:focus) ~ #results-container {
-        opacity: 0;
+        display: none;
     }
 
     .page-link {
