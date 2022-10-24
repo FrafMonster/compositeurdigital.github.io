@@ -17,6 +17,7 @@
 
         border-style: solid;
         border-radius: 500px;
+        border-color: #F03B5E;
 
         padding: 6px;
 
@@ -41,10 +42,9 @@
         background-color: transparent;
 
         border-style: none;
-        /* border-left: solid; */
 
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 4px;
+        padding-right: 2px;
     }
 
     #results-container {
@@ -56,8 +56,8 @@
         margin: 0px;
         padding: 0px;
 
-        opacity: 0;
-        background-color: #DDDDDD;
+        opacity: 1;
+        background-color: #EEEEEE;
 
         border-radius: 10px;
 
@@ -67,8 +67,6 @@
     }
 
     .page-item {
-        padding: 8px;
-
         color: #F03B5E;
     }
 
@@ -76,6 +74,8 @@
         display: block;
 
         width: 100%;
+
+        padding: 8px;
     }
 
     .page-item:hover a {
@@ -105,16 +105,12 @@
         border-left: solid;
     }
 
-    #search-container[isSearching] #results-container {
-        opacity: 1;
-    }
-
-    /*
+    #search-container:not([isSearching]) #results-container,
     #search-input:placeholder-shown ~ #results-container,
     #search-input:not(:focus) ~ #results-container {
         opacity: 0;
     }
-    */
+
 </style>
 
 <div id="search-container">
