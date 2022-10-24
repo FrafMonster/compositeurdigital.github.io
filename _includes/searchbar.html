@@ -30,14 +30,13 @@
 
         transition: 0.3s ease-in-out;
     }
-    
-    #search-input:focus {
-        width: 192px;
-
-    }
 
     #search-input:focus-visible {
         outline: none;
+    }
+
+    #search-container[isSearching="true"] .input-container #searchInput {
+        width: 192px;
     }
 
     #search-icon {
@@ -60,7 +59,7 @@
 
         padding: 0px;
 
-        opacity: 1;
+        opacity: 0;
         background-color: #DDDDDD;
 
         border-radius: 10px;
@@ -68,6 +67,10 @@
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
 
         transition: 0.5s;
+    }
+
+    #search-container[isSearching="true"] #results-container {
+        opacity: 1;
     }
 
     .page-item:first-child a {
@@ -78,10 +81,12 @@
         border-radius: 0 0 10px 10px;
     }
 
+    /*
     #search-input:placeholder-shown ~ #results-container,
     #search-input:not(:focus) ~ #results-container {
         opacity: 0;
     }
+    */
 
     .page-link {
         display: block;
@@ -119,6 +124,15 @@
 
 <!-- Configuration -->
 <script type="text/javascript">
+    function init() {
+        let searchButton = document.getElementById("search-icon");
+        let searchContainer = document.getElementById("search-container");
+
+        searchButton.addEventListener("click", () => {
+            searchContainer.toggleAttribute("isSearching");
+        });
+    }
+
     window.addEventListener("load", () => {
         let jsonIndexFiles = new Map([
             ['fr', 'https://frafmonster.github.io/compositeurdigital.github.io/data/search_fr.json'],
@@ -129,6 +143,8 @@
             ['fr', "Rechercher..."],
             ['en', "Search..."]
         ]);
+
+        init();
         
         let language = navigator.language;
 
