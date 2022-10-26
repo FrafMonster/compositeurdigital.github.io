@@ -2,6 +2,8 @@
 
 <style>
     #search-container {
+        position: relative;
+
         margin-right: 16px;
 
         transition: 0.5s;
@@ -16,12 +18,12 @@
         height: 42px;
 
         border-style: solid;
-        border-radius: 500px;
+        border-radius: 10px 10px 0 0;
         border-color: #F03B5E;
 
         padding: 6px;
 
-        transition: 0.5s;
+        transition: 0.5s linear;
 
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.65);
     }
@@ -31,7 +33,7 @@
     }
 
     #search-input {
-        width: 192px;
+        width: 24vh;
 
         margin: 0px;
         padding: 0px;
@@ -61,15 +63,21 @@
         position: absolute;
         list-style: none;
 
-        width: 380px;
+        width: 100%;
 
         margin: 0px;
-        padding: 0px;
+        padding: 4px;
 
+        overflow: hidden;
         opacity: 1;
-        background-color: #EEEEEE;
+        background-color: white;
 
-        border-radius: 10px;
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+
+        border-radius: 0 0 10px 10px;
+        border-color: #F03B5E;
 
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
 
@@ -87,6 +95,8 @@
 
         padding: 8px;
 
+        border-radius: 10px;
+
         transition: 0.2s;
     }
 
@@ -101,12 +111,11 @@
         background-color: #F03B5E;
     }
 
-    .page-item:first-child a {
-        border-radius: 10px 10px 0 0;
-    }
-
-    .page-item:last-child a {
-        border-radius: 0 0 10px 10px;
+    #search-container:not([isSearching]) .input-container,
+    .input-container:has(#search-input:placeholder-shown),
+    .input-container:has(#search-input:not(:focus))
+    {
+        border-radius: 10px;
     }
 
     #search-container:not([isSearching]) .input-container #search-input {
@@ -114,8 +123,10 @@
     }
 
     #search-container[isSearching] .input-container #search-icon {
+        padding-left: 4px;
+        
         border-left: solid;
-        border-width: 2px;
+        border-width: 1.5px;
         border-color: #F03B5E;
     }
 
@@ -176,6 +187,9 @@
                 json: json,
                 searchResultTemplate: '<li class="page-item"><a class="page-link" href="{{ site.url }}{url}">{title}</a></li>',
                 limit: 20,
+                sortMiddleware: function(a, b) {
+                    return a.title.localeCompare(b.title);
+                }
             });
         }
     });
