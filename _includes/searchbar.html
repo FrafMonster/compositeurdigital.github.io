@@ -17,31 +17,29 @@
 
         height: 42px;
 
-        border-style: solid;
+        border-style: none;
         border-radius: 10px 10px 0 0;
-        border-color: #F03B5E;
 
-        padding: 6px;
+        transition: 0.1s;
 
-        transition: 0.5s linear;
-
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.65);
-    }
-
-    #search-container:not([isSearching]) .input-container {
-        background-color: #F03B5E;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     }
 
     #search-input {
         width: 24vh;
 
         margin: 0px;
-        padding: 0px;
+        padding: 10px;
 
+        color: white;
         background-color: transparent;
         border-style: none;
 
         transition: 0.3s ease-in-out;
+    }
+
+    #search-input::placeholder {
+        color: rgba(255, 255, 255, 65%);
     }
 
     #search-input:focus-visible {
@@ -51,12 +49,22 @@
     #search-icon {
         font-size: 1.15rem;
 
+        width: 42px;
+        height: 42px;
+
         background-color: transparent;
 
         border-style: none;
+        border-radius: 0 10px 0 0;
 
-        padding-left: 1px;
-        padding-right: 1px;
+        padding-left: 0px;
+        padding-right: 0px;
+
+        transition: 0.2s;
+    }
+
+    #search-icon:hover {
+        background-color: #F03B5E;
     }
 
     #results-container {
@@ -69,15 +77,10 @@
         padding: 4px;
 
         overflow: hidden;
-        opacity: 1;
+        display: block;
         background-color: white;
 
-        border-left: solid;
-        border-right: solid;
-        border-bottom: solid;
-
         border-radius: 0 0 10px 10px;
-        border-color: #F03B5E;
 
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
 
@@ -111,29 +114,58 @@
         background-color: #F03B5E;
     }
 
+    /* ---------------------------------------- [ INPUT CONTAINER ] ---------------------------------------- */
+
+    /* [ Not searching ] || [ Placeholder shown ] || [ Not focused ] => 10px corner radius everywhere */
     #search-container:not([isSearching]) .input-container,
     .input-container:has(#search-input:placeholder-shown),
-    .input-container:has(#search-input:not(:focus))
-    {
+    .input-container:has(#search-input:not(:focus)) {
         border-radius: 10px;
     }
 
+    /* [ Searching ] => Transition animation to 0 */
+    #search-container[isSearching] .input-container {
+        background-color: #ff6b87;
+        transition: 0s;
+    }
+
+    /* ------------------------------------------ [ SEARCH INPUT ] ----------------------------------------- */
+
+    /* [ Not searching ] => Input field width = 0 */
     #search-container:not([isSearching]) .input-container #search-input {
         width: 0px;
+        padding: 0px;
+        color: white;
     }
 
-    #search-container[isSearching] .input-container #search-icon {
-        padding-left: 4px;
-        
-        border-left: solid;
-        border-width: 1.5px;
-        border-color: #F03B5E;
+    /* [ Not searching ] => Input field width = 0 */
+    #search-container:not([isSearching]) .input-container #search-input::placeholder {
+        color: white;
     }
 
+    /* ------------------------------------------ [ SEARCH ICON ] ------------------------------------------ */
+
+    #search-container:has(#search-input:placeholder-shown) #search-icon,
+    #search-container:has(.input-container #search-input:not(:focus)) #search-icon {
+        border-radius: 0 10px 10px 0;
+    }
+
+    #search-container:not([isSearching]) #search-icon {
+        border-radius: 10px !important;
+    }
+
+    #search-container[isSearching] #search-icon {
+        background-color: #F03B5E;
+    }
+
+    /* ---------------------------------------- [ RESULT CONTAINER ] --------------------------------------- */
+
+    /* [ Not searching ] || [ Placeholder shown ] || [ Not focused ] => Don't display the container */
+    
     #search-container:not([isSearching]) #results-container,
     #search-container:has(#search-input:placeholder-shown) #results-container,
-    #search-container:has(#search-input:not(:focus)) #results-container {
-        opacity: 0;
+    #search-container:has(.input-container #search-input:not(:focus)) #results-container {
+            display: none;
     }
 
 </style>
