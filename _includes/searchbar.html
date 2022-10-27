@@ -4,7 +4,7 @@
     #search-container {
         position: relative;
 
-        margin-right: 16px;
+        margin: 16px;
 
         transition: 0.5s;
     }
@@ -16,6 +16,8 @@
         justify-content: flex-start;
 
         height: 42px;
+
+        background-color: #ff6b87;
 
         border-style: none;
         border-radius: 10px 10px 0 0;
@@ -40,6 +42,7 @@
 
     #search-input::placeholder {
         color: rgba(255, 255, 255, 65%);
+        transition: 0.3s ease-in-out;
     }
 
     #search-input:focus-visible {
@@ -93,6 +96,7 @@
 
     .page-item a {
         display: block;
+        text-align: left;
 
         width: 100%;
 
@@ -125,7 +129,6 @@
 
     /* [ Searching ] => Transition animation to 0 */
     #search-container[isSearching] .input-container {
-        background-color: #ff6b87;
         transition: 0s;
     }
 
@@ -135,12 +138,12 @@
     #search-container:not([isSearching]) .input-container #search-input {
         width: 0px;
         padding: 0px;
-        color: white;
+        color: #ff6b87;
     }
 
     /* [ Not searching ] => Input field width = 0 */
     #search-container:not([isSearching]) .input-container #search-input::placeholder {
-        color: white;
+        color: #ff6b87;
     }
 
     /* ------------------------------------------ [ SEARCH ICON ] ------------------------------------------ */
@@ -166,6 +169,10 @@
     #search-container:has(#search-input:placeholder-shown) #results-container,
     #search-container:has(.input-container #search-input:not(:focus)) #results-container {
             display: none;
+    }
+
+    #results-container:hover {
+        display: block !important;
     }
 
 </style>
@@ -205,7 +212,9 @@
 
         init();
         
-        let language = navigator.language;
+        let language = navigator.language.split("-")[0];
+
+        console.log(language);
 
         if (language !== undefined) {
             let searchInput = document.getElementById("search-input");            

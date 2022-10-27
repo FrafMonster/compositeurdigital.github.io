@@ -11,16 +11,16 @@
   </head>
   <body>
     <section id="page-header-area" class="page-header">
-      <div>
+      <div class="page-header-div">
         <img id="header-image" src="https://frafmonster.github.io/compositeurdigital.github.io/assets/img/CD-titre-header.png" width=500 />
         <h1 id="header-text" class="project-name">Documentation</h1>
+        {% include searchbar.html %}
       </div>
     </section>
 
     <section class="main-content">
       <div>
         <div class="improve right hide-on-mobiles">
-          {% include searchbar.html %}
           <a id="improve-page-link" href="https://github.com/compositeurdigital/compositeurdigital.github.io/edit/master/{{ page.path }}"><i class="fa fa-pencil"></i>Improve this page</a>
         </div>
       </div>
@@ -64,7 +64,7 @@
           headerImage.style.width = '250px';
           headerImage.style.height = '23.4px';
         } else {
-          header.style.padding = '3rem';
+          header.style.padding = '2rem';
           header.style.boxShadow = 'none';
 
           headerText.style.fontSize = '1.75em';
