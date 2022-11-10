@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Guide Compositeur Digital Pitch Promotion #
 
 ## A faire impérativement avant votre premier RDV – Premier lancement ##

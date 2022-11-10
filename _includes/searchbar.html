@@ -37,7 +37,7 @@
         background-color: transparent;
         border-style: none;
 
-        transition: 0.3s ease-in-out;
+        transition: 0.5s cubic-bezier(.56,-0.9,.48,1.94);
     }
 
     #search-input::placeholder {
@@ -50,6 +50,10 @@
     }
 
     #search-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         font-size: 1.15rem;
 
         width: 42px;
@@ -70,6 +74,16 @@
         background-color: #F03B5E;
     }
 
+    #search-icon:focus-visible {
+        outline: solid;
+    }
+
+    #search-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    #tmp-results-container,
     #results-container {
         position: absolute;
         list-style: none;
@@ -88,6 +102,40 @@
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
 
         transition: 0.5s;
+    }
+
+    #results-container {
+        display: none;
+    }
+
+    .chunk {
+        list-style: none;
+
+        padding: 2px;
+        margin: 4px;
+
+        color: black;
+
+        transition: 0.3s;
+    }
+
+    .chunk a:hover {
+        text-decoration: none;
+    }
+
+    .chunk h3 {
+        text-align: left;
+
+        padding: 0;
+        margin: 4px;
+
+        border-bottom: solid;
+        border-color: #F03B5E;
+        border-width: 1.5px;
+    }
+
+    .chunk h3:hover {
+        cursor: pointer;
     }
 
     .page-item {
@@ -167,10 +215,14 @@
     
     #search-container:not([isSearching]) #results-container,
     #search-container:has(#search-input:placeholder-shown) #results-container,
-    #search-container:has(.input-container #search-input:not(:focus)) #results-container {
+    #search-container:has(.input-container #search-input:not(:focus)) #results-container,
+    #search-container:not([isSearching]) #tmp-results-container,
+    #search-container:has(#search-input:placeholder-shown) #tmp-results-container,
+    #search-container:has(.input-container #search-input:not(:focus)) #tmp-results-container {
             display: none;
     }
 
+    #tmp-results-container:hover,
     #results-container:hover {
         display: block !important;
     }
@@ -180,9 +232,12 @@
 <div id="search-container">
     <div class="input-container">
         <input type="text" id="search-input" placeholder="...">
-        <button id="search-icon">🔍</button>
+        <button id="search-icon">
+            <img src="/assets/img/search-icon.svg" />
+        </button>
     </div>
     <ul id="results-container"></ul>
+    <ul id="tmp-results-container"></ul>
 </div>
 
 <!-- Grab search-script.js -->
@@ -190,6 +245,8 @@
 
 <!-- Configuration -->
 <script type="text/javascript">
+    // 🔍
+    
     function init() {
         let searchButton = document.getElementById("search-icon");
         let searchContainer = document.getElementById("search-container");
@@ -199,10 +256,90 @@
         });
     }
 
+    function createCategory(category) {
+        let section = document.createElement("ul");
+        
+        section.className = "chunk";
+        
+        let sectionTitle = document.createElement("h3");
+        let sectionLink = document.createElement("a");
+        sectionLink.href = category.path;
+        
+        sectionTitle.appendChild(document.createTextNode(category.name));
+        sectionLink.append(sectionTitle);
+        
+        section.appendChild(sectionLink);
+        
+        category.items.forEach(item => {
+            section.appendChild(item);
+        });
+
+        return section;
+    }
+
+    function categorize() {
+        let resultContainer = document.getElementById("results-container");
+        let tmpResultContainer = document.getElementById("tmp-results-container");
+
+        let results = Array.from(resultContainer.getElementsByTagName("li"));
+        let categories = []; // Stores an object with category name + list of items
+
+        let i = 0;
+        
+        /* Go through all the results */
+        while (i < results.length) {
+            let subCategories = [];
+            let lastCategory = categories[categories.length - 1];
+            
+            let lastCategoryName = undefined;
+            let lastCategoryPath = undefined;
+
+            /* All results are sorted this way: '<category>-<title>', by category then by title */
+            while (i < results.length) {
+                let item = results[i];
+
+                /* If the last category is the same as the current */
+                if (lastCategoryName === undefined || item.getAttribute("category") === lastCategoryName) {
+                    subCategories.push(item);
+                } else {
+                    break;
+                }
+
+                lastCategoryName = item.getAttribute("category");
+                lastCategoryPath = item.getAttribute("category_path");
+
+                console.log(item.getAttribute("category_path"));
+
+                i++
+            }
+
+            /* Push a "Category" object that holds the category name and all its children */
+            categories.push({name: lastCategoryName, path: lastCategoryPath, items: subCategories});
+        }
+
+        resultContainer.innerHTML = "";
+        tmpResultContainer.innerHTML = "";
+
+        console.log("-- REFRESH -------------------------------------------------");
+
+        categories.forEach(category => {
+            console.log(category);
+
+            let subList = createCategory(category);
+
+            tmpResultContainer.appendChild(subList);
+        });
+
+        console.log("--- END ----------------------------------------------------");
+        console.log(" ");
+    }
+
     window.addEventListener("load", () => {
         let jsonIndexFiles = new Map([
             ['fr', 'https://frafmonster.github.io/compositeurdigital.github.io/data/search_fr.json'],
+            // ['fr', '/data/search_fr.json'],
             ['en', 'https://frafmonster.github.io/compositeurdigital.github.io/data/search_en.json']
+            // ['en', '/data/search_en.json']
         ]);
 
         let placeholders = new Map([
@@ -221,15 +358,22 @@
             let json = jsonIndexFiles.get(language);
 
             searchInput.placeholder = placeholders.get(language);
+
+            searchInput.addEventListener("input", () => {
+                categorize()
+            });
             
             SimpleJekyllSearch({
                 searchInput: document.getElementById('search-input'),
                 resultsContainer: document.getElementById('results-container'),
                 json: json,
-                searchResultTemplate: '<li class="page-item"><a class="page-link" href="{{ site.url }}{url}">{title}</a></li>',
+                searchResultTemplate: '<li category="{category}" category_path="{category_path}" class="page-item"><a class="page-link" href="{{ site.url }}{url}">{title}</a></li>',
                 limit: 20,
                 sortMiddleware: function(a, b) {
-                    return a.title.localeCompare(b.title);
+                    let astr = a.category + "-" + a.title;
+                    let bstr = b.category + "-" + b.title;
+                    
+                    return astr.localeCompare(bstr);
                 }
             });
         }
