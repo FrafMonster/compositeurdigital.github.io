@@ -37,7 +37,7 @@
         background-color: transparent;
         border-style: none;
 
-        transition: 0.5s cubic-bezier(.56,-0.9,.48,1.94);
+        transition: 0.5s cubic-bezier(.5,-0.45,.5,1.45);
     }
 
     #search-input::placeholder {
@@ -67,7 +67,7 @@
         padding-left: 0px;
         padding-right: 0px;
 
-        transition: 0.2s;
+        transition: background-color 0.2s;
     }
 
     #search-icon:hover {
@@ -123,15 +123,26 @@
         text-decoration: none;
     }
 
+    .chunk a {
+        display: flex;
+        align-items: center;
+    }
+
+    .chunk-image {
+        width: 10px;
+        height: 10px;
+    }
+
     .chunk h3 {
+        flex-grow: 1;
         text-align: left;
 
         padding: 0;
         margin: 4px;
+    }
 
-        border-bottom: solid;
-        border-color: #F03B5E;
-        border-width: 1.5px;
+    .chunk h3 {
+        color: #F03B5E;
     }
 
     .chunk h3:hover {
@@ -139,7 +150,24 @@
     }
 
     .page-item {
+        display: flex;
+        align-items: center;
+        position: relative;
+
         color: #F03B5E;
+
+        border-radius: 10px;
+
+        transition: padding 0.2s;
+    }
+
+    .page-item:hover {
+        font-weight: bold;
+
+        text-decoration: none;
+
+        color: white;
+        background-color: #F03B5E;
     }
 
     .page-item a {
@@ -150,20 +178,22 @@
 
         padding: 8px;
 
-        border-radius: 10px;
+        color: #F03B5E;
 
-        transition: 0.2s;
+        border-radius: 10px;
     }
 
     .page-item:hover a {
-        font-weight: bold;
+        color: white;
+    }
 
-        text-decoration: none;
+    .page-arrow {
+        width: 16px;
+        height: 16px;
 
-        padding-left: 24px;
+        padding-right: 8px;
 
         color: white;
-        background-color: #F03B5E;
     }
 
     /* ---------------------------------------- [ INPUT CONTAINER ] ---------------------------------------- */
@@ -172,7 +202,7 @@
     #search-container:not([isSearching]) .input-container,
     .input-container:has(#search-input:placeholder-shown),
     .input-container:has(#search-input:not(:focus)) {
-        border-radius: 10px;
+        border-radius: 100px;
     }
 
     /* [ Searching ] => Transition animation to 0 */
@@ -198,11 +228,11 @@
 
     #search-container:has(#search-input:placeholder-shown) #search-icon,
     #search-container:has(.input-container #search-input:not(:focus)) #search-icon {
-        border-radius: 0 10px 10px 0;
+        border-radius: 0 100px 100px 0;
     }
 
     #search-container:not([isSearching]) #search-icon {
-        border-radius: 10px !important;
+        border-radius: 100px !important;
     }
 
     #search-container[isSearching] #search-icon {
@@ -262,10 +292,16 @@
         section.className = "chunk";
         
         let sectionTitle = document.createElement("h3");
+        let sectionImage = document.createElement("img");
         let sectionLink = document.createElement("a");
+        
+        sectionImage.classList.add("chunk-image");
+        sectionImage.setAttribute("src", "/assets/img/circle.svg");
         sectionLink.href = category.path;
         
         sectionTitle.appendChild(document.createTextNode(category.name));
+        
+        sectionLink.appendChild(sectionImage);
         sectionLink.append(sectionTitle);
         
         section.appendChild(sectionLink);
@@ -336,10 +372,10 @@
 
     window.addEventListener("load", () => {
         let jsonIndexFiles = new Map([
-            ['fr', 'https://frafmonster.github.io/compositeurdigital.github.io/data/search_fr.json'],
-            // ['fr', '/data/search_fr.json'],
-            ['en', 'https://frafmonster.github.io/compositeurdigital.github.io/data/search_en.json']
-            // ['en', '/data/search_en.json']
+            // ['fr', 'https://frafmonster.github.io/compositeurdigital.github.io/data/search_fr.json'],
+            ['fr', '/data/search_fr.json'],
+            // ['en', 'https://frafmonster.github.io/compositeurdigital.github.io/data/search_en.json']
+            ['en', '/data/search_en.json']
         ]);
 
         let placeholders = new Map([
@@ -367,7 +403,13 @@
                 searchInput: document.getElementById('search-input'),
                 resultsContainer: document.getElementById('results-container'),
                 json: json,
-                searchResultTemplate: '<li category="{category}" category_path="{category_path}" class="page-item"><a class="page-link" href="{{ site.url }}{url}">{title}</a></li>',
+                searchResultTemplate: `
+                <li category="{category}" category_path="{category_path}" class="page-item">
+                    <a class="page-link" href="{{ site.url }}{url}">
+                        {title}
+                    </a>
+                    <img class="page-arrow" src="/assets/img/right-arrow-icon.svg">
+                </li>`,
                 limit: 20,
                 sortMiddleware: function(a, b) {
                     let astr = a.category + "-" + a.title;
